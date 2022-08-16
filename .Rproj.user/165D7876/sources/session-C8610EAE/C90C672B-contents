@@ -6,6 +6,7 @@ editor: visual
 
 ```{r}
 library(tidyverse)
+library(lubridate)
 ```
 
 # Joins
@@ -76,4 +77,65 @@ semi_join_example <- semi_join(animals, sites)
 ```{r}
 anti_join_example <- anti_join(animals, sites, by = "location")
 ```
+
+# Dates and times with `lubridate`
+
+```{r}
+my_date <- "03-15-1998"
+lubridate::mdy(my_date)
+
+my_date <- "11/7/2003"
+lubridate::dmy(my_date)
+
+my_date <- "08-Jun-1974"
+lubridate::dmy(my_date)
+
+my_date <- "19610518"
+lubridate::ymd(my_date)
+
+```
+
+```{r}
+lubridate::mdy("1942-08-30")
+
+lubridate::dmy("09/22/84")
+
+```
+
+```{r}
+time <- "2020-08-12 11:18"
+time <- ymd_hm(time)
+time
+class(time)
+
+```
+
+```{r}
+# working with time zones
+with_tz(time, "America/Buenos_Aires")
+
+with_tz(time, "America/Los_Angeles")
+
+my_time <- lubridate::ymd_hms(time)
+
+year(my_time)
+week(my_time)
+day(my_time)
+hour(my_time)
+minute(my_time)
+```
+
+```{r}
+teddy_bday <- lubridate::ymd("20170615")
+wday(teddy_bday, label = TRUE)
+
+wade_bday <- lubridate::ymd("19940121")
+wday(wade_bday, label = TRUE)
+# What day of the week is the date from?
+week(wade_bday)
+
+```
+
+
+
 
