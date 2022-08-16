@@ -3,9 +3,9 @@
     "path": "~/Desktop/bren_meds/courses/summer/eds221/eds221-day7-comp/day7-key.qmd",
     "project_path": "day7-key.qmd",
     "type": "quarto_markdown",
-    "hash": "3307237645",
+    "hash": "4288899311",
     "contents": "",
-    "dirty": false,
+    "dirty": true,
     "created": 1660669533550.0,
     "source_on_save": false,
     "relative_order": 1,
@@ -15,8 +15,8 @@
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "133,40",
-        "scrollLine": "123",
+        "cursorPosition": "161,0",
+        "scrollLine": "147",
         "docOutlineVisible": "0",
         "rmdVisualCollapsedChunks": "",
         "rmdVisualModeLocation": "1327:1241"
@@ -26,7 +26,7 @@
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1660685487441,
+    "last_content_update": 1660686410599,
     "read_only": false,
     "read_only_alternatives": []
 }

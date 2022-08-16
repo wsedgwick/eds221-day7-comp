@@ -136,6 +136,31 @@ week(wade_bday)
 
 ```
 
+```{r}
+urchin_counts <-tribble(
+  ~date, ~species, ~size_mm,
+  "10/3/2020", "purple", 55,
+  "10/4/2020", "red", 48,
+  "11/17/2020", "red", 67
+)
+
+urchin_ymd <- urchin_counts %>% 
+  mutate(date = mdy(date)) %>% 
+  mutate(year = year(date),
+         month = month(date),
+         day = day(date))
+```
+
+```{r}
+day_1 <- ymd("2020-01-06")
+day_2 <- ymd("2020-05-18")
+
+time_interval <- interval(day_1, day_2)
+time_interval
+
+time_length(time_interval, "week")
+
+```
 
 
 
