@@ -1,6 +1,8 @@
-"0","minute(my_time)
+"0","with_tz(time, ""UK/Stanley"")
 "
+"2","Warning: Unrecognized time zone 'UK/Stanley'"
+"2","Warning: unknown timezone 'UK/Stanley'"
 "1","[1]"
-"1"," 18"
+"1"," ""2020-08-12 11:18:00 GMT"""
 "1","
 "
