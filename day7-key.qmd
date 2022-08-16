@@ -1,0 +1,9 @@
+---
+title: "Joins and strings and dates"
+format: html
+editor: visual
+---
+
+# Join
+s
+### 
