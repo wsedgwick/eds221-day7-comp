@@ -1,0 +1,5 @@
+"0",""
+"0","penguins_new <- penguins %>% "
+"0","  filter(island %in% c(""Biscoe"", ""Dream"")) %>% "
+"0","  select(-year, -sex)"
+"0",""

@@ -4,6 +4,76 @@ format: html
 editor: visual
 ---
 
-# Join
-s
-### 
+```{r}
+library(tidyverse)
+```
+
+# Joins
+
+```{r}
+
+animals <- tibble::tribble(
+             ~location,   ~species,  ~maturity,
+              "lagoon",   "bobcat",    "adult",
+               "bluff",   "coyote", "juvenile",
+               "creek",      "fox",    "adult",
+                "oaks", "squirrel", "juvenile",
+               "bluff",   "bobcat",    "adult"
+)
+
+sites <- tibble::tribble(
+           ~location,      ~full_site_name, ~jurisdiction,
+             "beach",       "Goleta Beach",     "SB City",
+            "lagoon",        "UCSB Lagoon",        "UCSB",
+             "bluff",       "Ellwood Mesa",     "SB City",
+              "oaks", "Fremont Campground",        "USFS"
+           )
+
+```
+
+### Full Join
+
+```{r}
+
+full_join_example <- full_join(animals, sites)
+
+```
+
+### Left Join
+
+```{r}
+
+left_join_example <- left_join(animals, sites, by = "location")
+
+```
+
+### Right Join
+
+### Inner Join
+
+```{r}
+inner_join_example <- inner_join(animals, sites, by = "location")
+```
+
+### Example when key variables have non-matching names
+
+```{r}
+
+sites_2 <- sites %>% 
+  rename(loc = location)
+
+nonmatching <- full_join(animals, sites_2, by = c("location" = "loc"))
+```
+
+### Semi Join
+
+```{r}
+semi_join_example <- semi_join(animals, sites)
+```
+
+### Anti Join
+
+```{r}
+anti_join_example <- anti_join(animals, sites, by = "location")
+```
+

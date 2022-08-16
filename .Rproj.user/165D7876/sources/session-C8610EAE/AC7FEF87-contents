@@ -1,0 +1,39 @@
+---
+title: "data_wrangling_refresher"
+format: html
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+
+```
+
+
+## Penguins Data Wrangling
+
+```{r}
+
+penguins_new <- penguins %>% 
+  filter(island %in% c("Biscoe", "Dream")) %>% 
+  select(-year, -sex) %>% 
+  mutate(body_mass_kg = body_mass_g / 1000) %>% 
+  rename(location = island)
+
+```
+
+
+
+```{r}
+
+penguins_other <- penguins %>% 
+  filter(species == "Adelie") %>% 
+  filter(!is.na(flipper_length_mm)) %>% 
+  group_by(sex) %>% 
+  summarise(flipper_mean = mean(flipper_length_mm),
+            flipper_sd = sd(flipper_length_mm),
+            count = n())
+
+```
+

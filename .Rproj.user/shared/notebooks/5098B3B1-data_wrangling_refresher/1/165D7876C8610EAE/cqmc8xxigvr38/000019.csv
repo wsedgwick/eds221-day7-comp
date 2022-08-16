@@ -1,0 +1,22 @@
+"0","penguins_other <- penguins %>% 
+  filter(species == ""Adelie"") %>% 
+  filter(!is.na(flipper_length_mm)) %>% 
+  group_by(sex) %>% 
+  summarise(flipper_mean = mean(flipper_length_mm, na.rm = TRUE),
+            flipper_sd = sd(flipper_length_mm, na.rm = TRUE),
+            count = n(na.rm = TRUE))
+"
+"1","[1m[33mError[39m in [38;5;232m`summarise()`[39m:[22m
+[38;5;232m[33m![38;5;232m Problem while computing `count = n(na.rm = TRUE)`.
+[36mℹ[38;5;232m The error occurred in group 1: sex = female.[39m
+[1mCaused by error in [38;5;232m`n()`[39m:[22m
+[33m![39m unused argument (na.rm = TRUE)
+Backtrace:
+[90m 1. [39m... %>% ...
+[90m 3. [39m[1mdplyr[22m:::summarise.grouped_df(...)
+[90m 4. [39mdplyr:::summarise_cols(.data, dplyr_quosures(...), caller_env = caller_env())
+[90m 6. [39mdplyr:::map(quosures, summarise_eval_one, mask = mask)
+[90m 7. [39m[1mbase[22m::lapply(.x, .f, ...)
+[90m 8. [39m[1mdplyr[22m FUN(X[[i]], ...)
+[90m 9. [39mmask$eval_all_summarise(quo)
+"
